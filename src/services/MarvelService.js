@@ -23,11 +23,16 @@ class MarvelService {
   _transformCharacter = (character) => {
     return {
       name: character.name,
-      description: character.description,
+      description: this.validationDescription(character.description),
       thumbnail: character.thumbnail.path + "." + character.thumbnail.extension,
       homepage: character.urls[0].url,
       wiki: character.urls[1].url,
     };
+  };
+  validationDescription = (description) => {
+    return description.length === 0
+      ? "No description for this character."
+      : description.slice(0, 200).concat("...");
   };
 }
 export default MarvelService;
