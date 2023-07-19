@@ -10,6 +10,9 @@ class CharList extends Component {
     loading: true,
     error: false,
   };
+  handleOnCharSelectedId = (id) => {
+    this.props.onCharSelected(id);
+  };
 
   marvelService = new MarvelService();
 
@@ -45,7 +48,11 @@ class CharList extends Component {
       }
 
       return (
-        <li className="char__item" key={item.id}>
+        <li
+          className="char__item"
+          key={item.id}
+          onClick={() => this.handleOnCharSelectedId(item.id)}
+        >
           <img src={item.thumbnail} alt={item.name} style={imgStyle} />
           <div className="char__name">{item.name}</div>
         </li>
