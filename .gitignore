@@ -24,3 +24,4 @@ yarn-error.log*
 
 #passwords and keys
 /marvel.txt
+src/test
