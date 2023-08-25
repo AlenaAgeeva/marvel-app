@@ -5,6 +5,7 @@ import CharList from "../charList/CharList";
 import CharInfo from "../charInfo/CharInfo";
 import decoration from "../../resources/img/vision.png";
 import ErrorBoundary from "../errorBoundary/ErrorBoundary";
+import Button from "../../test/test";
 
 const App = () => {
   const [selectedCharId, setChar] = useState(null);
@@ -19,14 +20,16 @@ const App = () => {
         <ErrorBoundary>
           <RandomChar />
         </ErrorBoundary>
-        <div className="char__content">
-          <ErrorBoundary>
-            <CharList onCharSelected={onCharSelected} />
-          </ErrorBoundary>
-          <ErrorBoundary>
-            <CharInfo id={selectedCharId} />
-          </ErrorBoundary>
-        </div>
+        {
+          <div className="char__content">
+            <ErrorBoundary>
+              <CharList onCharSelected={onCharSelected} />
+            </ErrorBoundary>
+            <ErrorBoundary>
+              <CharInfo id={selectedCharId} />
+            </ErrorBoundary>
+          </div>
+        }
         <img className="bg-decoration" src={decoration} alt="vision" />
       </main>
     </div>
