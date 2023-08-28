@@ -1,9 +1,9 @@
-import React, { useState, useEffect, useRef } from "react";
-import "./charList.scss";
+import { useState, useEffect, useRef } from "react";
+import "./charList.sass";
 import useMarvelService from "../../services/MarvelService";
 import Spinner from "../spinner/Spinner";
 import ErrorMessage from "../errorMessage/ErrorMessage";
-import PropTypes, { func } from "prop-types";
+import PropTypes from "prop-types";
 
 const CharList = (props) => {
   const [charList, setCharList] = useState([]);
@@ -11,7 +11,6 @@ const CharList = (props) => {
   const [offset, setOffset] = useState(210);
   const [charEnded, setCharEnded] = useState(false);
   const itemRefs = useRef([]);
-
   const { loading, error, getCharacters } = useMarvelService();
 
   useEffect(() => {
@@ -20,9 +19,9 @@ const CharList = (props) => {
 
   const focusOnItem = (id) => {
     itemRefs.current.forEach((item) =>
-      item.classList.remove("char__item_selected")
+      item.classList.remove("char__item__selected")
     );
-    itemRefs.current[id].classList.add("char__item_selected");
+    itemRefs.current[id].classList.add("char__item__selected");
     itemRefs.current[id].focus();
   };
   const onRequestLoadMore = (offset, initial) => {
@@ -53,6 +52,7 @@ const CharList = (props) => {
       return (
         <li
           className="char__item"
+          tabIndex={0}
           key={item.id}
           ref={(el) => (itemRefs.current[i] = el)}
           onClick={() => {

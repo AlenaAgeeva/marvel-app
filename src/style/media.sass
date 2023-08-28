@@ -1,0 +1,186 @@
+@media (max-width: 1200px)
+    .randomchar
+        &__block
+            column-gap: 20px
+            padding: 40px 20px
+
+        &__btns
+            a:nth-child(1)
+                margin-right: 15px
+
+        &__title
+            font-size: 22px
+            line-height: 30px
+
+        .button
+            min-width: 90px
+
+    .char
+        &__content
+            grid-template-columns: auto 425px
+            justify-content: center
+            column-gap: 50px
+
+        &__grid
+            grid-template-columns: repeat(2, 200px)
+
+
+
+@media (max-width: 992px)
+    .randomchar
+        grid-template-columns: unset
+        grid-template-rows: repeat(2, minmax(260px, auto))
+
+        &__block
+            column-gap: 35px
+            padding: 40px 35px
+
+        &__btns
+            a:nth-child(1)
+                margin-right: 30px
+
+        &__title
+            font-size: 24px
+            line-height: 32px
+
+        .button
+            min-width: 101px
+
+    .char
+        &__grid
+            grid-template-columns: repeat(1, 200px)
+
+        &__btns
+            a:nth-child(1)
+                margin-right: 30px
+
+
+@media (max-width: 768px)
+    .app
+        .bg-decoration
+            display: none
+
+        &__baner
+            &-text
+                font-size: 20px
+                line-height: 24px
+                padding-left: 30px
+
+    .char
+        &__content
+            grid-template: auto auto / 100%
+            justify-content: center
+            row-gap: 20px
+
+            div:first-child
+                order: 2
+
+        &__grid
+            grid-template-columns: repeat(2, 200px)
+            justify-content: center
+
+        &__sidebar
+            position: unset
+            top: unset
+
+    .single-comic 
+        grid-template-columns: unset
+        grid-template: auto auto / 293px auto
+        column-gap:  20px
+        row-gap: 40px
+
+        &__back
+            justify-self: start
+
+    .single-char
+        grid-template-columns: 293px auto 70px
+        column-gap: 25px
+        &__back
+            font-size: 14px
+
+    .randomchar
+        &__decoration
+            right: -27px
+
+
+
+@media (max-width: 576px)
+    .app 
+        &__header
+            flex-direction: column
+        &__title
+            margin-bottom: 15px
+
+        &__baner
+            height: unset
+            padding: 0 20px 0 20px
+            grid-template-columns: unset
+            grid-template-rows: repeat(2, 100px) 60px
+            row-gap: 20px
+            justify-items: center
+
+            &-text
+                order: 3
+                padding-top: 0
+                padding-left: 0                
+                font-size: 23px
+                line-height: 25px
+
+    .randomchar
+        &__block
+            grid-template-columns: unset
+            grid-template-rows: repeat(2, auto)
+
+        &__block
+            padding: 40px 25px
+
+        &__title
+            font-size: 22px
+            line-height: 30px
+
+        &__decoration
+            display: none
+
+    .char
+        &__grid
+            grid-template-columns: repeat(1, 200px)
+
+        &__basics
+            grid-template: auto auto / auto
+        &__search
+            &-form
+                padding: 18px
+                margin-top: 15px
+            &-wrapper
+                display: inline-block
+                input
+                    margin-bottom: 10px
+
+    .single-comic 
+        grid-template: unset
+        grid-template-rows: 450px auto auto
+        row-gap: 30px
+
+        &__name
+            font-size: 20px
+            line-height: 22px
+
+        &__descr, &__back
+            font-size: 16px
+            line-height: 18px
+
+        &__price
+            font-size: 18px
+            line-height: 20px
+
+        &__img
+            width: 270px
+            height: 430px
+
+    .single-char
+        display: block
+        &__back
+            margin-top: 15px
+            font-size: 18px
+        &__img
+            width: 270px

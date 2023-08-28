@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import "./charInfo.scss";
+import "./charInfo.sass";
 import ErrorMessage from "../errorMessage/ErrorMessage";
 import Spinner from "../spinner/Spinner";
 import Skeleton from "../skeleton/Skeleton";
@@ -11,15 +11,15 @@ const CharInfo = (props) => {
 
   useEffect(() => {
     updateChar();
-  }, [props.id]);
+  }, [props.charId]);
 
   const updateChar = () => {
-    const { id } = props;
-    if (!id) {
+    const { charId } = props;
+    if (!charId) {
       return;
     }
     clearError();
-    getSingleCharacter(id).then(onCharLoaded);
+    getSingleCharacter(charId).then(onCharLoaded);
   };
   const onCharLoaded = (char) => {
     setChar(char);
@@ -78,6 +78,6 @@ const View = ({ char }) => {
   );
 };
 CharInfo.propTypes = {
-  id: PropTypes.number,
+  charId: PropTypes.number,
 };
 export default CharInfo;

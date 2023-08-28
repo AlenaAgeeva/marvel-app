@@ -1,0 +1,78 @@
+@import '../../style/variables.sass'
+
+.char
+
+    &__content
+        margin-top: 50px
+        display: grid
+        grid-template-columns: 650px 425px
+        justify-content: space-between
+        // column-gap: 25px
+        align-items: start
+
+    &__grid
+        display: grid
+        grid-template-columns: repeat(3, 200px)
+        column-gap: 25px
+        row-gap: 30px
+
+    &__item
+        width: 200px
+        height: 318px
+        background-color: $dark
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, .25)
+        padding: 15px
+        cursor: pointer
+        transition: 0.3s transform
+
+        img
+            width: 200px
+            height: 200px
+            object-fit: cover
+            transform: translate(-15px, -15px)
+
+        &__selected
+            box-shadow: 0 5px 20px $main-color
+            transform: translateY(-8px)
+
+        &-enter 
+            transform: translateX(-500px) rotate(90deg)
+        
+        &-enter-active 
+            transform: translateX(0) rotate(180deg)
+            transition: all 500ms
+        
+        &-enter-done 
+            transform: translateX(0) rotate(0deg)
+            transition: all 500ms
+
+        // &-enter
+        //     opacity: 0
+        //     transform: scale(0.4)
+
+        // &-enter-active
+        //     opacity: 1
+        //     transform: translateX(0)
+        //     transition: all 700ms ease-in
+
+        // &-enter-done
+        //     opacity: 1
+        //     transform: translateX(0)
+
+        // &-exit
+        //     opacity: 1
+
+        // &-exit-active
+        //     opacity: 0
+        //     transform: scale(0.4)
+        //     transition: all 700ms ease-in
+
+        // &-exit-done
+        //     opacity: 0
+
+    &__name
+        font-weight: bold
+        font-size: 22px
+        line-height: 29px
+        text-transform: uppercase
+        color: #FFFFFF

@@ -1,4 +1,4 @@
-import './skeleton.scss';
+import './skeleton.sass';
 
 const Skeleton = () => {
     return (
@@ -13,7 +13,7 @@ const Skeleton = () => {
                 <div className="pulse skeleton__block"></div>
                 <div className="pulse skeleton__block"></div>
             </div>
-        </>
+        </>        
     )
 }
 

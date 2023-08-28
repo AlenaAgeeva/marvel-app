@@ -1,4 +1,4 @@
-import { useCallback, useState } from "react";
+import { useState, useCallback } from "react";
 export const useHttp = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
@@ -17,7 +17,6 @@ export const useHttp = () => {
         }
         const data = await response.json();
         setLoading(false);
-        console.log("custom http hook");
         return data;
       } catch (e) {
         setLoading(false);
