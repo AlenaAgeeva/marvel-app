@@ -16,7 +16,7 @@ const MainPage = () => {
   };
 
   return (
-    <Route exact path="/">
+    <div>
       <ErrorBoundary>
         <RandomChar />
       </ErrorBoundary>
@@ -29,7 +29,7 @@ const MainPage = () => {
         </ErrorBoundary>
       </div>
       <img className="bg-decoration" src={decoration} alt="vision" />
-    </Route>
+    </div>
   );
 };
 
