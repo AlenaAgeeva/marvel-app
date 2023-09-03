@@ -21,7 +21,6 @@ const CharSearchForm = () => {
 
   const updateChar = (name) => {
     clearError();
-
     getCharacterByName(name).then(onCharLoaded);
   };
 
